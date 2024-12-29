@@ -18,8 +18,8 @@ pipeline {
     stages {
         stage('Checkout Code') {
             steps {
-                checkout([$class: 'GitSCM', branches: [[name: "*/${params.BRANCH_NAME}"]],
-                          userRemoteConfigs: [[url: 'https://github.com/manjunathbabur/dev_poc_project.git']]])
+                checkout([$class: 'GitSCM', branches: [[name: '*/dev']],
+                          userRemoteConfigs: [[url: 'https://github.com/manjunathbabur/dev_poc_project.git',credentialsId: 'GITHUB_CREDENTIALS']]])	
             }
         }
 
